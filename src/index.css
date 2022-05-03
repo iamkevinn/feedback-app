@@ -32,6 +32,11 @@ header {
   margin-bottom: 30px;
 }
 
+header a {
+  color: rgb(255, 106, 149);
+  text-decoration: none;
+}
+
 .card {
   background-color: #fff;
   color: #333;
@@ -188,6 +193,9 @@ input:focus {
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */
 .about-link {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
   display: flex;
   justify-content: flex-end;
 }
