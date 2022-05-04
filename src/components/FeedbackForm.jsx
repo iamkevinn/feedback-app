@@ -5,7 +5,8 @@ import Button from './shared/Button';
 import FeedbackContext from '../context/FeedbackContext';
 
 function FeedbackForm({ handleAdd }) {
-  const { addFeedback, feedbackEdit } = useContext(FeedbackContext);
+  const { addFeedback, feedbackEdit, updateFeedback } =
+    useContext(FeedbackContext);
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
 
@@ -42,7 +43,9 @@ function FeedbackForm({ handleAdd }) {
       rating,
     };
 
-    addFeedback(newFeedback);
+    if (feedbackEdit.edit === true)
+      updateFeedback(feedbackEdit.item.id, newFeedback);
+    else addFeedback(newFeedback);
     setText('');
   };
 
